@@ -5,6 +5,7 @@
  */
 
 require('./bootstrap');
+require('./calendar');
 
 window.Vue = require('vue').default;
 
