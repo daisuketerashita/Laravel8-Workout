@@ -12,7 +12,7 @@
 <body>
     <div class="form-wrapper">
         <div class="form-content">
-            <form action="" method="post" enctype="multipart/form-data">
+            <form action="{{ route('store',['id' => $day]) }}" method="post" enctype="multipart/form-data">
                 <div class="err-content alert-danger">
                 @foreach($errors->all() as $message)
                     <li>{{ $message }}</li>

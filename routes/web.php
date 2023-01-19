@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ScheduleController;
+use App\Http\Controllers\ExerciseController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,6 +21,11 @@ Route::get('/',[ScheduleController::class,'index'])->name('index');
 Route::post('/schedule-get',[ScheduleController::class,'scheduleGet'])->name('schedule-get');
 //部位登録画面
 Route::get('/calendar/add/{id}',[ScheduleController::class,'add'])->name('add');
+Route::post('/calendar/add/{id}',[ScheduleController::class,'store'])->name('store');
+
+//種目登録
+Route::get('/calendar/add/exercise/{id}',[ExerciseController::class,'add'])->name('exe.add');
+Route::post('/calendar/add/exercise/{id}',[ExerciseController::class,'store'])->name('exe.store');
 
 Auth::routes();
 

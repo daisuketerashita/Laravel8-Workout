@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Schedule;
+use App\Http\Requests\CreateSchedule;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -19,6 +20,24 @@ class ScheduleController extends Controller
     {
         $day = $id;
         return view('schedule.add',['day' => $day]);
+    }
+
+    //部位追加登録処理
+    public function store(CreateSchedule $request,$id)
+    {
+        $day = $id;
+        $schedule = new Schedule();
+
+        //値を代入
+        $schedule->user_id = 1;
+        $schedule->start_date = $request->sch_date;
+        $schedule->end_date = $request->sch_date;
+        $schedule->sch_part = $request->sch_part;
+
+        // インスタンスの状態をデータベースに書き込む
+        $schedule->save();
+
+        return redirect()->route('exe.add',['id' => $schedule->id]);
     }
 
     //イベントを取得
