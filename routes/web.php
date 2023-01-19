@@ -23,6 +23,9 @@ Route::post('/schedule-get',[ScheduleController::class,'scheduleGet'])->name('sc
 Route::get('/calendar/add/{id}',[ScheduleController::class,'add'])->name('add');
 Route::post('/calendar/add/{id}',[ScheduleController::class,'store'])->name('store');
 
+//詳細ページ
+Route::get('/calendar/detail/{date}/{title}',[ScheduleController::class,'detail'])->name('detail');
+
 //種目登録
 Route::get('/calendar/add/exercise/{id}',[ExerciseController::class,'add'])->name('exe.add');
 Route::post('/calendar/add/exercise/{id}',[ExerciseController::class,'store'])->name('exe.store');

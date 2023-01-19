@@ -5479,6 +5479,17 @@ var calendar = new _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__.Calendar(cale
       alert("登録に失敗しました");
     });
   },
+  eventClick: function eventClick(e) {
+    var title = e.event.title;
+    var defId = e.event._def.defId;
+    var date = e.event.startStr;
+    console.log(e.event.groupId);
+    axios__WEBPACK_IMPORTED_MODULE_0___default().get("/calendar/detail/" + date + "/" + title).then(function (res) {
+      location.href = "/calendar/detail/" + date + "/" + title;
+    })["catch"](function () {
+      alert("登録に失敗しました");
+    });
+  },
   events: function events(info, successCallback, failureCallback) {
     // Laravelのイベント取得処理の呼び出し
     axios__WEBPACK_IMPORTED_MODULE_0___default().post("/schedule-get", {

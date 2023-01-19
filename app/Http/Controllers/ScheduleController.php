@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Schedule;
+use App\Models\Exercise;
 use App\Http\Requests\CreateSchedule;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -64,5 +65,20 @@ class ScheduleController extends Controller
             ->where('end_date', '>', $start_date)
             ->where('start_date', '<', $end_date)
             ->get();
+    }
+
+    //詳細画面表示
+    public function detail($date,$title)
+    {
+        //スケジュール情報を取得
+        $schedule = Schedule::where('start_date',$date)->where('sch_part',$title)->first();
+
+        // 選ばれた部位に紐づく種目を取得する
+        $exercises = Exercise::where('schedule_id', $schedule->id)->get();
+
+        return view('schedule.detail',[
+            'schedule' => $schedule,
+            'exercises' => $exercises,
+        ]);
     }
 }
