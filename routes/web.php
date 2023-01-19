@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ScheduleController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,13 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/calendar', function () {
-    return view('calendar');
-});
+//一覧ページ
+Route::get('/',[ScheduleController::class,'index'])->name('index');
+// イベント取得処理
+Route::post('/schedule-get',[ScheduleController::class,'scheduleGet'])->name('schedule-get');
+//部位登録画面
+Route::get('/calendar/add/{id}',[ScheduleController::class,'add'])->name('add');
 
 Auth::routes();
 
