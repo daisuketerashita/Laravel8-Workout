@@ -22,6 +22,8 @@ Route::post('/schedule-get',[ScheduleController::class,'scheduleGet'])->name('sc
 //部位登録画面
 Route::get('/calendar/add/{id}',[ScheduleController::class,'add'])->name('add');
 Route::post('/calendar/add/{id}',[ScheduleController::class,'store'])->name('store');
+//部位削除
+Route::get('/calendar/{id}/delete/',[ScheduleController::class,'delete'])->name('sch.delete');
 
 //詳細ページ
 Route::get('/calendar/detail/{date}/{title}',[ScheduleController::class,'detail'])->name('detail');
@@ -32,6 +34,8 @@ Route::post('/calendar/add/exercise/{id}',[ExerciseController::class,'store'])->
 //種目編集
 Route::get('/calendar/{id}/edit/{exe_id}',[ExerciseController::class,'edit'])->name('exe.edit');
 Route::post('/calendar/{id}/edit/{exe_id}',[ExerciseController::class,'update'])->name('exe.update');
+//種目削除
+Route::get('/calendar/{id}/delete/{exe_id}',[ExerciseController::class,'delete'])->name('exe.delete');
 
 Auth::routes();
 

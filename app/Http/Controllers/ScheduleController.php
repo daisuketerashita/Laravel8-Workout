@@ -81,4 +81,16 @@ class ScheduleController extends Controller
             'exercises' => $exercises,
         ]);
     }
+
+    //削除機能
+    public function delete(int $id)
+    {
+        //スケジュール情報を取得
+        $schedule = Schedule::find($id);
+
+        $schedule->delete();
+
+        return redirect()->route('index');
+    }
+    
 }

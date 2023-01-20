@@ -69,4 +69,14 @@ class ExerciseController extends Controller
                 'exercises' => $exercises,
         ]);
     }
+
+    //削除機能
+    public function delete(int $id,int $exe_id)
+    {
+        $exercise = Exercise::find($exe_id);
+
+        $exercise->delete();
+
+        return redirect()->route('index');
+    }
 }
