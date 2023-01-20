@@ -29,6 +29,9 @@ Route::get('/calendar/detail/{date}/{title}',[ScheduleController::class,'detail'
 //種目登録
 Route::get('/calendar/add/exercise/{id}',[ExerciseController::class,'add'])->name('exe.add');
 Route::post('/calendar/add/exercise/{id}',[ExerciseController::class,'store'])->name('exe.store');
+//種目編集
+Route::get('/calendar/{id}/edit/{exe_id}',[ExerciseController::class,'edit'])->name('exe.edit');
+Route::post('/calendar/{id}/edit/{exe_id}',[ExerciseController::class,'update'])->name('exe.update');
 
 Auth::routes();
 
