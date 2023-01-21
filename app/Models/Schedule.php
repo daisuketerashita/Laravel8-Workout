@@ -14,4 +14,13 @@ class Schedule extends Model
     {
         return $this->hasMany('App\Models\Exercise');
     }
+
+    public static function boot()
+    {
+        parent::boot();
+
+        static::deleting(function ($schedule) {
+            $schedule->exercises()->delete();
+        });
+    }
 }
