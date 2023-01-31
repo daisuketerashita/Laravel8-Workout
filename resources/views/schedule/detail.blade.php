@@ -30,10 +30,10 @@
                     @endforeach
                 </ul>
                 <p><button type="button" class='form-btn prev-btn' onclick="location.href='{{ route('exe.add',['id' => $schedule->id]) }}'">追加</button></p>
-                <p><button type="button" class='form-btn prev-btn' onclick="location.href='{{ route('sch.delete',['id' => $schedule->id]) }}'">削除</button></p>
+                <p><button type="button" class='form-btn del-btn' onclick="location.href='{{ route('sch.delete',['id' => $schedule->id]) }}'">削除</button></p>
+                <a href="{{ route('index') }}" class='form-btn back-btn'>戻る</a>
             </div><!-- /.exe_content -->
         </div><!-- /.content_wrapper -->
-        <a href="{{ route('index') }}">戻る</a>
     </div><!-- /.main_wrapper -->
 </body>
 
