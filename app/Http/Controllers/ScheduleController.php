@@ -13,7 +13,8 @@ class ScheduleController extends Controller
     //カレンダー表示
     public function index()
     {
-        return view('calendar');
+        $schedules = Auth::user()->schedules()->get();
+        return view('calendar',['schedules' => $schedules]);
     }
 
     //部位追加ページ表示
@@ -30,7 +31,7 @@ class ScheduleController extends Controller
         $schedule = new Schedule();
 
         //値を代入
-        $schedule->user_id = 1;
+        $schedule->user_id = \Auth::id();
         $schedule->start_date = $request->sch_date;
         $schedule->end_date = $request->sch_date;
         $schedule->sch_part = $request->sch_part;
@@ -64,6 +65,7 @@ class ScheduleController extends Controller
             // FullCalendarの表示範囲のみ表示
             ->where('end_date', '>', $start_date)
             ->where('start_date', '<', $end_date)
+            ->where('user_id', \Auth::user()->id)
             ->get();
     }
 
@@ -71,7 +73,9 @@ class ScheduleController extends Controller
     public function detail($date,$title)
     {
         //スケジュール情報を取得
-        $schedule = Schedule::where('start_date',$date)->where('sch_part',$title)->first();
+        // $schedule = Schedule::where('start_date',$date)->where('sch_part',$title)->first();
+        //ユーザーに紐付いたスケジュール情報を取得
+        $schedule = Auth::user()->schedules()->where('start_date',$date)->where('sch_part',$title)->first();
 
         // 選ばれた部位に紐づく種目を取得する
         $exercises = Exercise::where('schedule_id', $schedule->id)->get();

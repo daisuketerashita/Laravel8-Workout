@@ -45,7 +45,7 @@ let calendar = new Calendar(calendarEl, {
             });
     },
 
-    events: function (info, successCallback, failureCallback) {
+    events: function (info, successCallback) {
         // Laravelのイベント取得処理の呼び出し
         axios
             .post("/schedule-get", {
@@ -60,7 +60,7 @@ let calendar = new Calendar(calendarEl, {
             })
             .catch(() => {
                 // バリデーションエラーなど
-                alert("登録に失敗しました");
+                // alert("登録に失敗しました");
             });
     },
 });

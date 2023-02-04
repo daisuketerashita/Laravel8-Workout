@@ -5490,7 +5490,7 @@ var calendar = new _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__.Calendar(cale
       alert("登録に失敗しました");
     });
   },
-  events: function events(info, successCallback, failureCallback) {
+  events: function events(info, successCallback) {
     // Laravelのイベント取得処理の呼び出し
     axios__WEBPACK_IMPORTED_MODULE_0___default().post("/schedule-get", {
       start_date: info.start.valueOf(),
@@ -5502,7 +5502,7 @@ var calendar = new _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__.Calendar(cale
       successCallback(response.data);
     })["catch"](function () {
       // バリデーションエラーなど
-      alert("登録に失敗しました");
+      // alert("登録に失敗しました");
     });
   }
 });
