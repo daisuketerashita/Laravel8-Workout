@@ -3,24 +3,25 @@
 }
 
 body {
-    background-color: #FFF;
+    background-color: #FFBB56;
     font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
 }
 
 .main_wrapper {
+    background-color: #FFF;
+    color: #989d9b;
     width: 650px;
     margin: 0 auto;
     justify-content: center;
     align-items: center;
     padding: 20px 0;
     margin-top: 2%;
-    border-radius: 10px;
-    background: #f1f8ff;
+    border-radius: 12px;
 }
 .part_content{
     font-size: 1.6rem;
-    border: double 5px #668ad8;
     padding: 10px;
+    color: #FF5F4B;
 }
 .part_content h3{
     margin-top: 2px;
