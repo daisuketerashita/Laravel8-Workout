@@ -13,11 +13,14 @@
     <div class="form-wrapper">
         <div class="form-content">
             <form action="{{ route('store',['id' => $day]) }}" method="post" enctype="multipart/form-data">
-                <div class="err-content alert-danger">
-                @foreach($errors->all() as $message)
-                    <li>{{ $message }}</li>
-                @endforeach
-                </div>
+                @if($errors->any())
+                    <div class="err-content alert-danger" style="list-style: none;padding: 10px;background-color: pink; color: red;">
+                        @foreach($errors->all() as $message)
+                            <li>{{ $message }}</li>
+                        @endforeach
+                    </div>
+                @endif
+
                 @csrf
                 <table class="inner-wrapper">
                     <tr>
