@@ -9,7 +9,7 @@ body {
 
 .main_wrapper {
     background-color: #FFF;
-    color: #989d9b;
+    color: #888;
     width: 650px;
     margin: 0 auto;
     justify-content: center;
@@ -21,7 +21,7 @@ body {
 .part_content{
     font-size: 1.6rem;
     padding: 10px;
-    color: #FF5F4B;
+    color: #3688D8;
 }
 .part_content h3{
     margin-top: 2px;
