@@ -3,12 +3,61 @@
 }
 
 body {
-    margin: 10px 10px;
+    background-color: #FFBB56;
     font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
 }
 
 
+.howto-container{
+    background-color: #FFF;
+    color: #888;
+    width: 55%;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2%;
+    margin-bottom: 4%;
+    border-radius: 12px;
+}
+.howto-innner{
+    padding: 0 6%;
+}
+
 /* バナー */
-img{
-    width: 40%;
+.img_head{
+    text-align: center;
+}
+.img_head img{
+    width: 30%;
+}
+.img_center{
+    text-align: center;
+    margin-bottom: 60px;
+}
+.img_center img{
+    width: 50%;
+}
+
+/* 
+ボタン
+*/
+.howto-bottom{
+    padding-bottom: 40px;
+}
+.next-btn{
+    display: block;
+    width: 250px;
+    padding: 15px 0;
+    margin: auto;
+    background: #8FB4E1;
+    color: #FFF;
+    border-radius: 12px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 1rem;
+}
+.next-btn:hover{
+    opacity: 0.9;
+    text-decoration: none;
+    color: #FFF;
 }

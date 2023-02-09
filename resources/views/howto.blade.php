@@ -70,15 +70,26 @@
             </div>
         </nav>
     <div class="howto-container">
+        <p class="img_head">
+            <img src="{{ asset('images/icon.png') }}" alt="">
+        </p>
         <div class="howto-innner">
-            <h2>①『追加する』ボタンを押す</h2>
-            <img src="{{ asset('images/01_sample.png') }}" alt="">
-            <h2>②『タイトル』『鑑賞日』『サムネイル』『星評価』を入力する</h2>
-            <img src="{{ asset('images/02_sample.png') }}" alt="">
-            <h2>②『タイトル』『鑑賞日』『サムネイル』『星評価』を入力する</h2>
-            <img src="{{ asset('images/03_sample.png') }}" alt="">
+            <h2>①トレーニング日をクリック</h2>
+            <p class="img_center">
+                <img src="{{ asset('images/01_sample.png') }}" alt="">
+            </p>
+            <h2>②トレーニング『部位』を選択する</h2>
+            <p class="img_center">
+                <img src="{{ asset('images/02_sample.png') }}" alt="">
+            </p>
+            <h2>②『種目名』『重さ』『レップ数』『セット数』を入力する</h2>
+            <p class="img_center">
+                <img src="{{ asset('images/03_sample.png') }}" alt="">
+            </p>
         </div><!-- howto-innner -->
-        <a href="{{ route('index') }}" class='btn btn-info btn-back'>さっそく使ってみる</a>
+        <div class="howto-bottom">
+            <a href="{{ route('index') }}" class='form-btn next-btn'>さっそく使ってみる</a>
+        </div>
     </div><!-- howto-container -->
 </div>
 </body>
