@@ -42,5 +42,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/calendar/{id}/delete/{exe_id}', [ExerciseController::class, 'delete'])->name('exe.delete');
 });
 
+//使い方ページ
+Route::get('/howto', [ScheduleController::class, 'howto'])->name('howto');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

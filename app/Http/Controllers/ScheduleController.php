@@ -97,4 +97,9 @@ class ScheduleController extends Controller
         return redirect()->route('index');
     }
     
+    //使い方
+    public function howto()
+    {
+        return view('howto');
+    }
 }

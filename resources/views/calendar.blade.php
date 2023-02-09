@@ -11,7 +11,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <a class="navbar-brand" href="{{ url('/') }}" style="margin-left: 70px;">
+                <a class="navbar-brand" href="{{ route('howto') }}" style="margin-left: 70px;">
                     使い方
                 </a>
                 
