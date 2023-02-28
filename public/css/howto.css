@@ -22,6 +22,9 @@ body {
 .howto-innner{
     padding: 0 6%;
 }
+.howto-innner h2{
+    font-size: 1.2rem;
+}
 
 /* バナー */
 .img_head{
